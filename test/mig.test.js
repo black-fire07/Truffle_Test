@@ -52,8 +52,8 @@ contract('SalaryDrop', accounts => {
 
         it('check salarydrop', async () => {
             await CorpPayInstance.SalaryDropHere(accounts[1]);
-            let balance = tokenusdt.balanceOf(accounts[1]);
-            assert.equal(balance,1000,"correct")
+            let balance = await tokenusdt.balanceOf(accounts[1]);
+            assert.equal(balance.toString(),1000,"correct")
         });
     })
 })
